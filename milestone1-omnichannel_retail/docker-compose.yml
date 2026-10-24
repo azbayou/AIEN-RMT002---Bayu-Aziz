@@ -111,6 +111,7 @@ services:
       LOCAL_POSTGRES_DB: retail_analytics
       LOCAL_POSTGRES_USER: retail
       LOCAL_POSTGRES_PASSWORD: retail
+      LOCAL_DATABASE_URL: postgresql://retail:retail@postgres:5432/retail_analytics
       NL2SQL_PROVIDER: mock
     ports:
       - "8000:8000"

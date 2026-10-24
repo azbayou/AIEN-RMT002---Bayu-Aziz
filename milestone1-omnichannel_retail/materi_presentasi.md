@@ -1,6 +1,6 @@
 # MATERI PRESENTASI: END-TO-END DATA PIPELINE MILESTONE 1
 ## Omnichannel Retail NL-to-SQL Analytics
-**Presenter:** Data Engineer  
+**Presenter:** Bayu Aziz  
 **Project:** Milestone 1 — Omnichannel Retail Analytics Platform  
 
 ---
@@ -26,14 +26,14 @@ Pipeline data ini dibangun di atas infrastruktur modern yang modular, reproducib
 | **Data Storage / Warehouse** | PostgreSQL | 16 | Basis data relasional analitik lokal (Menyimpan Ops, Bronze, Silver, Gold) |
 | **Pipeline Orchestrator** | Apache Airflow | 2.9.3 | Otomasi penjadwalan, dependensi DAG, pemantauan *fail-fast*, dan XCom |
 | **Airflow Executor** | LocalExecutor | - | Eksekusi paralel task dalam container scheduler |
-| **Environment & Package** | UV & Python | 3.12 | Manajemen dependensi virtual environment berkecepatan tinggi |
-| **Database Driver** | pg8000 & psycopg2 | Pure Python | Driver koneksi database lokal tanpa ketergantungan DLL native |
+| **Environment & Package** | UV & Python | 3.12 
+| **Database Driver** | pg8000 & psycopg2 | Pure Python
 | **AI Analytical Engine** | FastAPI (Uvicorn) | 2.0.0 | API boundary untuk validasi dan eksekusi query NL-to-SQL ke layer Gold |
 | **Front-End Dashboard** | Streamlit + Plotly | 1.40+ | Antarmuka obrolan analitik interaktif berbasis grafik dan visualisasi data |
 | **Containerization** | Docker & Docker Compose | Compose v2 | Isolasi environment (`postgres`, `webserver`, `scheduler`, `api`, `ui`) |
 
-### B. Konfigurasi Environment Kunci (`.env` & `docker-compose.yml`)
-- **Target Koneksi:** Diarahkan ke database lokal (`ANALYTICS_DB_TARGET=local`), bukan cloud demo, untuk memastikan kedaulatan data dan isolasi pengujian.
+### B. Konfigurasi Environment (`.env` & `docker-compose.yml`)
+- **Target Koneksi:** Diarahkan ke database lokal (`ANALYTICS_DB_TARGET=local`)
 - **Port Mapping:**
   - `5432` : PostgreSQL Analytics Server
   - `8080` : Apache Airflow Web UI Dashboard
@@ -258,6 +258,7 @@ Berikut adalah solusi teknis data engineering yang diimplementasikan:
 - **Slide 6:** Solusi Engineering (Clean vs Reject, Deterministic Deduplication, CTE Pre-aggregation).
 - **Slide 7:** Airflow DAG Orchestration & Fail-Fast Quality Gate (Tampilkan screenshot DAG hijau).
 - **Slide 8:** Gold Layer Analytics (Penjelasan rumus Net Revenue, AOV, ROAS, Refund Rate).
+
 - **Slide 9:** Live Demo / Showcase (Streamlit Chatbot UI & NL-to-SQL query hasil Gold).
 - **Slide 10:** Kesimpulan, Business Impact, dan Rencana Future Work.
 
